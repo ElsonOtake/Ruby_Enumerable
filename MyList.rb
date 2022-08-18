@@ -6,23 +6,11 @@ class MyList
     @list = list
   end
   def each(&block)
-    @list.each { |a| block.call(a) }
-  end
-  def size
-    @list.length
-  end
-  def first
-    @list.first
-  end
-  def last
-    @list.last
+    @list.each { |a| block.call a }
   end
 end
 
-list = MyList.new(1, 2, 3, 4)
-p list.size
-p list.first
-p list.last
+p list = MyList.new(1, 2, 3, 4)
 p list.all? {|e| e < 5}
 p list.all? {|e| e > 5}
 p list.any? {|e| e == 2}
